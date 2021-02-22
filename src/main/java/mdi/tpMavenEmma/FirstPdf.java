@@ -32,6 +32,9 @@ public class FirstPdf {
     private static Font smallBold = new Font(Font.FontFamily.TIMES_ROMAN, 12,
             Font.BOLD);
 
+    //cmd
+    private void codeMort() {}
+    
     public static void main(String[] args) {
         try {
             Document document = new Document();
