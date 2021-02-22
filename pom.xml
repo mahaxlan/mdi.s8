@@ -132,7 +132,7 @@
 			</executions>
 		</plugin>
 		
-		<!-- dependency executable jar -->
+		<!-- executable jar jenkins-->
 		<plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-jar-plugin</artifactId>
@@ -146,6 +146,14 @@
         </configuration>
         </plugin>
 		
+		<!-- test junit jenkins -->
+		<plugin>
+          <artifactId>maven-surefire-plugin</artifactId>
+            <configuration>
+             <groups>mdi.tpMavenEmma.AppTest</groups>
+            </configuration>
+        </plugin>
+        
       </plugins>
   </build>
   
