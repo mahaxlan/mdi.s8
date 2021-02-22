@@ -31,6 +31,18 @@
     <artifactId>itextpdf</artifactId>
     <version>5.5.13.1</version>
 	</dependency>
+	
+	<dependency>
+      <groupId>commons-lang</groupId>
+      <artifactId>commons-lang</artifactId>
+      <version>2.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.codehaus.plexus</groupId>
+      <artifactId>plexus-utils</artifactId>
+      <version>1.1</version>
+    </dependency>
+    
   </dependencies>
 
   <build>
@@ -54,10 +66,12 @@
           <artifactId>maven-surefire-plugin</artifactId>
           <version>2.22.1</version>
         </plugin>
+        
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
           <version>3.0.2</version>
         </plugin>
+        
         <plugin>
           <artifactId>maven-install-plugin</artifactId>
           <version>2.5.2</version>
@@ -117,6 +131,20 @@
 				</execution>
 			</executions>
 		</plugin>
+		
+		<!-- dependency executable jar -->
+		<plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+          <configuration>
+          <archive>
+            <manifest>
+              <addClasspath>true</addClasspath>
+              <mainClass>mdi.tpMavenEmma.App</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+        </plugin>
 		
       </plugins>
   </build>
